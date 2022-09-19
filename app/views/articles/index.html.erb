@@ -1,0 +1,32 @@
+<h1>Hola Mundo!</h1>
+
+
+<ul>
+<h1>Las etiquetas porcentaje porcentaje son "evalua este codigo de ruby"</h1>
+<h1>Las etiquetas porcentaje igual porcentaje son "evalua este codigo de ruby y escribi el valor que devuelve"</h1>
+    <!--<% @articles.each do |article| %>
+        <li>
+        <a href="/articles/<%= article.id %>">
+            <%= article.title %>
+        </a>
+        </li>
+        Primera forma...
+    <% end %>-->
+    <h1>Puedo usar link_to ya que uso un resource,
+    el primer argumento es una etiqueta "a" con el nombre de article.title en mi caso,
+    el segundo es el destino, el "href" digamos,
+    como le paso un objeto articulo, llama a la funcion article_path que es un get:/id a esa entidad</h1>
+
+    Our blog has <%= Article.public_count %> articles and counting!
+    <% @articles.each do |article| %>
+    <% unless article.archived? %>
+    <li>  
+      <%= link_to article.title, article %>
+    </li>
+    <% end %>
+  <% end %>
+
+
+</ul>
+
+<%= link_to "New Article", new_article_path %>
